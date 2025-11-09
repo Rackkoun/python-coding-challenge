@@ -67,12 +67,39 @@ def start_game():
         # Switch Player
         current_player = P2 if current_player == P1 else P1
 
+def ask_for_replay_game():
+    """Ask if players want to play again"""
+    while True:
+        choice = input(str("\nWould you like to player again? (y/n): ")).strip().lower()
+        if choice in ["y", "yes"]:
+            return True
+        elif choice in ["n", "no", "q"]:
+            return False
+        else:
+            print("Please enter 'y' for yes or 'n' for no." )
+
 if __name__ == '__main__':
     # 1. Display the rules
     display_game_rules()
 
-    # 2. Start Game
-    start_game()
+    # 2. Run Game in a loop
+    while True:
+        game_finished = start_game()
+
+        # 2.1. Break the loop in start game if game if player quit game
+        # or don't want to play again
+        if not game_finished:
+            break
+
+        # 2.2. Ask if player want to replay if game is finished or draw
+        if not ask_for_replay_game():
+            print("Thanks for playing! Goodbye!")
+            break
+
+        # Display this message when player want to replay
+        print("\n" + "="*25)
+        print("Starting a new Party...")
+        print("="*25)
 
     # # 2. init the game
     # init_board()
