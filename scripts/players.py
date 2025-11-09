@@ -1,4 +1,4 @@
-
+# players.py
 PLAYER_1_NAME = "P1"
 PLAYER_2_NAME = "P2"
 
