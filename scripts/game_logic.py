@@ -7,4 +7,24 @@ def is_valid(board: list[list[str]], row: int, col: int) -> bool:
     return (0 <= row <= 2) and (0 <= col <= 2) and board[row][col] == ""
 
 def check_winner(board: list[list[str]], player_symbol: str) -> bool:
-    pass
+    """Check if the current player has won."""
+    # 1. Rows check
+    for row in board:
+        # all func :-> return true of all elem in the iter are true/empty.
+        if all(cell == player_symbol for cell in row):
+            return True
+    
+    # 2. Cols check
+    for col in range(3):
+        if all(board[row][col] == player_symbol for row in range(3)):
+            return True
+    
+    # 3. Diagonal check
+    # 3.1. Normal diag
+    if all(board[i][i] == player_symbol for i in range(3)):
+        return True
+    # 3.2. Reverse diag
+    if all(board[i][2-i] == player_symbol for i in range(3)):
+        return True
+    
+    return False

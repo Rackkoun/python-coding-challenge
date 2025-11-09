@@ -2,7 +2,7 @@
 from scripts.game_rules import display_game_rules
 from scripts.game_board import init_board, load_board, update_board, display_board
 from scripts.players import load_players
-from scripts.game_logic import is_valid
+from scripts.game_logic import is_valid, check_winner
 
 def get_player_move(player_name: str, player_symbol: str, board: list[list[str]]) -> tuple[int, int]:
     "Read and check move enters by a player"
@@ -53,6 +53,11 @@ def start_game():
         board[row][col] = player_symbol
         update_board(board)
         display_board()
+
+        # Check win case
+        if check_winner(board, player_symbol):
+            print(f"Congratulation! {player_name} wins!")
+            return True
 
 if __name__ == '__main__':
     # 1. Display the rules
