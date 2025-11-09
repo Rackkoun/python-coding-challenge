@@ -28,3 +28,11 @@ def check_winner(board: list[list[str]], player_symbol: str) -> bool:
         return True
     
     return False
+
+def check_draw(board: list[list[str]]) -> bool:
+    """Check if no winner"""
+    for row in board:
+        for cell in row:
+            if cell == '':
+                return False
+    return True
