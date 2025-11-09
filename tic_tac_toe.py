@@ -78,8 +78,9 @@ def ask_for_replay_game():
         else:
             print("Please enter 'y' for yes or 'n' for no." )
 
-if __name__ == '__main__':
-    # 1. Display the rules
+# add the whole game in a method
+def launch_game():
+# 1. Display the rules
     display_game_rules()
 
     # 2. Run Game in a loop
@@ -101,91 +102,5 @@ if __name__ == '__main__':
         print("Starting a new Party...")
         print("="*25)
 
-    # # 2. init the game
-    # init_board()
-
-    # # 3. play
-    # is_playing = True
-    # # 3.1. Load players and board
-    # board = load_board()
-    # P1, P2 = load_players()
-    # print(P1)
-    # prompt 1
-    
-    # print(prompt1)
-
-    # # first check here
-    # while is_playing:
-    #     # Player 1 
-    #     prompt1 = str(input(f"{P1[0]} make a move (x1, x2) between [0 - 2]: ")).split(' ')
-    #     row, col = int(prompt1[0]), int(prompt1[1])
-    #     if (0 <= row <= 2) and (0 <= col <= 2): # check if the value entered is inside the grid or not
-    #         # should check if the given position is empty or not
-    #         if board[row][col] == '':
-    #             board[row][col] = P1[1]
-    #             board = update_board(board)
-    #             print(board)
-    #         else:
-    #             wrong_entry = True
-    #             while wrong_entry:
-    #                 print("position not allowed! Please try again.")
-    #                 prompt1 = str(input(f"{P1[0]} make a move (x1, x2) between [0 - 2]: ")).split(' ')
-    #                 row, col = int(prompt1[0]), int(prompt1[1])
-    #                 if (0 <= row <= 2) and (0 <= col <= 2): #
-    #                     # break
-    #                     if board[row][col] == '':
-    #                         board[row][col] = P1[1]
-    #                         board = update_board(board)
-    #                         print(board)
-    #                         wrong_entry = True
-    #     else:
-    #         wrong_entry = True
-    #         while wrong_entry:
-    #             print("position not allowed! Must be between [0 - 2]. Please try again.")
-    #             prompt1 = str(input(f"{P1[0]} make a move (x1, x2) between [0 - 2]: ")).split(' ')
-    #             row, col = int(prompt1[0]), int(prompt1[1])
-    #             if (0 <= row <= 2) and (0 <= col <= 2): #
-    #                 # break
-    #                 if board[row][col] == '':
-    #                     board[row][col] = P1[1]
-    #                     board = update_board(board)
-    #                     print(board)
-    #                     wrong_entry = True
-    #     # Player 2
-    #     prompt2 = str(input(f"{P2[0]} make a move (x1, x2) between [0 - 2]: ")).split(' ')
-    #     row, col = int(prompt2[0]), int(prompt2[1])
-    #     if (0 <= row <= 2) and (0 <= col <= 2): # check if the value entered is inside the grid or not
-    #         # should check if the given position is empty or not
-    #         if board[row][col] == '':
-    #             board[row][col] = P2[1]
-    #             board = update_board(board)
-    #             print(board)
-    #         else:
-    #             wrong_entry = True
-    #             while wrong_entry:
-    #                 print("position not allowed! Please try again.")
-    #                 prompt2 = str(input(f"{P2[0]} make a move (x1, x2) between [0 - 2]: ")).split(' ')
-    #                 row, col = int(prompt2[0]), int(prompt2[1])
-    #                 if (0 <= row <= 2) and (0 <= col <= 2): #
-    #                     # break
-    #                     if board[row][col] == '':
-    #                         board[row][col] = P1[1]
-    #                         board = update_board(board)
-    #                         print(board)
-    #                         wrong_entry = True
-    #     else:
-    #             wrong_entry = True
-    #             while wrong_entry:
-    #                 print("position not allowed! Please try again.")
-    #                 prompt2 = str(input(f"{P2[0]} make a move (x1, x2) between [0 - 2]: ")).split(' ')
-    #                 row, col = int(prompt2[0]), int(prompt2[1])
-    #                 if (0 <= row <= 2) and (0 <= col <= 2): #
-    #                     # break
-    #                     if board[row][col] == '':
-    #                         board[row][col] = P1[1]
-    #                         board = update_board(board)
-    #                         print(board)
-    #                         wrong_entry = True
-        
-                
-
+if __name__ == '__main__':
+    launch_game()
