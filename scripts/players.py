@@ -1,0 +1,9 @@
+# players.py
+PLAYER_1_NAME = "P1"
+PLAYER_2_NAME = "P2"
+
+PLAYER_1_SYMBOL = "X"
+PLAYER_2_SYMBOL = "O"
+
+def load_players():
+    return (PLAYER_1_NAME, PLAYER_1_SYMBOL), (PLAYER_2_NAME, PLAYER_2_SYMBOL)
